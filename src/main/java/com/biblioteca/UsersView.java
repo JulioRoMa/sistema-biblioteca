@@ -61,7 +61,7 @@ public class UsersView {
             }
 
             String sql = "INSERT INTO usuarios (nombre, apellidos, correo, telefono, direccion, fecha_registro, estado) VALUES (?, ?, ?, ?, ?, ?, ?)";
-            try (Connection connection = DatabaseConnection.getConnection();
+            try (Connection connection = DatabaseConnection.getInstance().getConnection();
                  PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setString(1, txtNombre.getText().trim());
                 statement.setString(2, txtApellidos.getText().trim());
