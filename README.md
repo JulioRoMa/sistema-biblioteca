@@ -22,6 +22,16 @@ Valores por defecto:
 
 Si tu instalación usa otras credenciales, edita esa clase.
 
+## Consulta de usuarios
+
+El botón **Consultar Usuarios** del menú permite mostrar todos los registros,
+buscar coincidencias parciales por nombre o apellido y filtrar por estado.
+
+- `DatabaseConnection`: Singleton que centraliza el acceso JDBC.
+- `UserDAO`: ejecuta consultas parametrizadas.
+- `UserFactory`: construye objetos `User` a partir de los resultados JDBC.
+- `ConsultaUsuariosView`: muestra los resultados en un `TableView`.
+
 ## Ejecutar con Maven o NetBeans
 - Compilar:
   ```bash

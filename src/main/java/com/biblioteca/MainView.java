@@ -27,6 +27,10 @@ public class MainView {
         btnUsers.setMaxWidth(200);
         btnUsers.setOnAction(e -> app.showView(new UsersView(app).getScene()));
 
+        Button btnUserQueries = new Button("Consultar Usuarios");
+        btnUserQueries.setMaxWidth(200);
+        btnUserQueries.setOnAction(e -> app.showView(new ConsultaUsuariosView(app).getScene()));
+
         Button btnBooks = new Button("Módulo de Libros");
         btnBooks.setMaxWidth(200);
         btnBooks.setOnAction(e -> app.showView(new BooksView(app).getScene()));
@@ -51,7 +55,7 @@ public class MainView {
         btnExit.setMaxWidth(200);
         btnExit.setOnAction(e -> System.exit(0));
 
-        root.getChildren().addAll(title, btnUsers, btnBooks, btnAuthors, btnCategories, btnLoans, btnReturns, btnExit);
+        root.getChildren().addAll(title, btnUsers, btnUserQueries, btnBooks, btnAuthors, btnCategories, btnLoans, btnReturns, btnExit);
 
         return new Scene(root, 600, 600);
     }

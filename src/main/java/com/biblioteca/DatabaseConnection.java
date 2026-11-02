@@ -12,10 +12,16 @@ public final class DatabaseConnection {
     private static final String PASSWORD = "";
     private static final String URL = "jdbc:mysql://" + HOST + ":" + PORT + "/" + DATABASE + "?serverTimezone=UTC";
 
+    private static final DatabaseConnection INSTANCE = new DatabaseConnection();
+
     private DatabaseConnection() {
     }
 
-    public static Connection getConnection() throws SQLException {
+    public static DatabaseConnection getInstance() {
+        return INSTANCE;
+    }
+
+    public Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
 }
