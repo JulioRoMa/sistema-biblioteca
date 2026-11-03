@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.biblioteca.ConsultaUsuariosView">
+    <top>
+        <VBox spacing="12" style="-fx-padding: 20 20 10 20;">
+            <Label text="Consulta de usuarios" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+            <HBox spacing="10">
+                <Label text="Buscar:"/>
+                <TextField fx:id="searchField" promptText="Nombre o apellido" prefWidth="240"/>
+                <Label text="Estado:"/>
+                <ComboBox fx:id="statusBox" prefWidth="150"/>
+                <Button text="Buscar" onAction="#searchUsers"/>
+                <Button text="Mostrar todos" onAction="#showAllUsers"/>
+                <Button text="Limpiar filtros" onAction="#clearFilters"/>
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="table" style="-fx-margin: 0 20 10 20;">
+            <placeholder><Label text="No hay registros para mostrar."/></placeholder>
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="60"/>
+                <TableColumn fx:id="nombreColumn" text="Nombre" prefWidth="120"/>
+                <TableColumn fx:id="apellidosColumn" text="Apellidos" prefWidth="150"/>
+                <TableColumn fx:id="emailColumn" text="Correo" prefWidth="190"/>
+                <TableColumn fx:id="telefonoColumn" text="Teléfono" prefWidth="110"/>
+                <TableColumn fx:id="direccionColumn" text="Dirección" prefWidth="220"/>
+                <TableColumn fx:id="fechaColumn" text="Fecha de registro" prefWidth="130"/>
+                <TableColumn fx:id="estadoColumn" text="Estado" prefWidth="100"/>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <HBox spacing="20" style="-fx-padding: 0 20 20 20;">
+            <Label fx:id="countLabel" text="Registros encontrados: 0"/>
+            <Label fx:id="messageLabel"/>
+            <Button text="Volver al inicio" onAction="#goBack"/>
+        </HBox>
+    </bottom>
+</BorderPane>

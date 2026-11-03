@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.biblioteca.BooksView" spacing="15" style="-fx-padding: 20;">
+    <Label text="Gestión de Libros" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+    <GridPane hgap="10" vgap="10">
+        <Label text="ISBN:" GridPane.rowIndex="0"/><TextField GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        <Label text="Título:" GridPane.rowIndex="1"/><TextField GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Label text="Autor:" GridPane.rowIndex="2"/><TextField GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <Label text="Editorial:" GridPane.rowIndex="3"/><TextField GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        <Label text="Categoría:" GridPane.rowIndex="4"/><TextField GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+        <Label text="Año de publicación:" GridPane.rowIndex="5"/><TextField GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+        <Label text="Número de ejemplares:" GridPane.rowIndex="6"/><TextField GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+        <Label text="Disponibilidad:" GridPane.rowIndex="7"/><TextField GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+    </GridPane>
+    <HBox spacing="10">
+        <Button text="Nuevo"/><Button text="Guardar"/><Button text="Buscar"/>
+        <Button text="Modificar"/><Button text="Eliminar"/><Button text="Limpiar"/>
+    </HBox>
+    <TableView VBox.vgrow="ALWAYS"><placeholder><Label text="No hay datos registrados"/></placeholder></TableView>
+    <Button text="Volver al Inicio" onAction="#goBack"/>
+</VBox>
